@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test1">
+        <h1 data-bind="title"></h1>
+        <h1 data-bind="counter"></h1>
+        <button onclick="State2.counter++">Increment</button>
+        <input data-bind="title">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script>
+        const State2 = $.createState({
+            title: "prova",
+            counter: "0"
+        })
+
+        $("#test1").bindState(State2)
+    </script>
+</body>
+
+</html>
