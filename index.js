@@ -2,7 +2,7 @@ $._states = {}
 
 $.fn.bindState = function(state) {
     this.attr("data-state", state._id)
-    this.find(`input:not([data-bind=""])`).keyup(function(){
+    this.find(`input[data-bind]:not([data-bind=""])`).keyup(function(){
         const bind = $(this).attr("data-bind")
         $._states[state._id][bind] = $(this).val()
     })
